@@ -13,7 +13,7 @@ public class FirstCalculator extends HttpServlet {
 
 	private long count = 0;
 
-	private void setRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	private synchronized void setRequest(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		count++;
 		String threadName = Thread.currentThread().getName();
 
